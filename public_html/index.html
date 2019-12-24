@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Converts simple text to HTML">
+        <meta name="author" content="Rob Garcia">
+        <title>Simple Text to HTML Converter</title>
+        <link rel="icon" href="favicon.ico" type="image/ico">
+        <link rel="icon" type="image/png" href="logo.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info static-top">
+            <div class="container">
+                <span class="navbar-left"><img src="logo.png" style="height: 50px; padding-right: 20px;"></span>
+                <span class="navbar-brand">Simple Text to HTML Converter</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/garciart" target="_blank" title="GitHub Repository">GitHub <i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>        
+        <main class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="mt-5">Simple Text to HTML Converter</h1>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <p class="lead font-weight-bold">1. Enter the text you want to convert below:</p>
+                    <textarea id="myText" rows="25"></textarea>
+                    <input id="convertButton" type="button" class="btn btn-primary" value="Convert text" />
+                    <input type="button" class="btn btn-warning" value="Clear text" onclick="javascript:eraseTextarea();"/>
+                </div>
+                <div id="convertedText" class="col-md-12">
+                    <hr>
+                    <p class="lead font-weight-bold">2. Converted Text:</p>
+                    <textarea id="myHTML" rows="25"></textarea>
+                </div>
+            </div>
+        </main>
+        <footer class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <hr>
+                    <p class="mt-5 mb-3 text-muted">Copyright &copy; 2017<span id="currentYear"></span> Rob Garcia. All Rights Reserved.</p>
+                    <!-- Content placeholder for main element content -->
+                    <?php echo $contentPlaceHolderFooter; ?>
+                </div>
+            </div>
+        </footer>
+        <script>
+            // Set copyright ending year to current year
+            var date = new Date();
+            var fullYear = date.getFullYear();
+            if (fullYear !== 2017) {
+                document.getElementById("currentYear").innerHTML = " - " + fullYear;
+            }
+            function eraseTextarea() {
+                document.getElementById("myText").value = "";
+            }
+        </script>
+        <script src="js/convertText.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>

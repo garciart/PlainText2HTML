@@ -1,0 +1,13 @@
+/**
+ * Summary. CSS augment of Bootstrap styling for application
+ *
+ * @author Rob Garcia at rgarcia@rgprogramming.com.
+ */
+
+header {
+    padding-top: 60px;
+}
+textarea {
+    font-family: monospace;
+    width:100%;
+}
