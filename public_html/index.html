@@ -44,7 +44,7 @@
                 <div id="convertedText" class="col-md-12">
                     <hr>
                     <p class="lead font-weight-bold">2. Converted Text:</p>
-                    <textarea id="myHTML" rows="25"></textarea>
+                    <textarea id="myHTML" rows="25" readonly></textarea>
                 </div>
             </div>
         </main>
@@ -67,6 +67,7 @@
             }
             function eraseTextarea() {
                 document.getElementById("myText").value = "";
+                document.getElementById("myHTML").value = "";
             }
         </script>
         <script src="js/convertText.js"></script>
